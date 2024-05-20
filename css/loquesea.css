@@ -1,0 +1,441 @@
+* {
+    margin: 0px;
+    box-sizing: border-box;
+}
+:root {
+    /* colors */
+    --white: #FFFFFF;                      /*bg body*/
+    --dark-slate-gray: #283841;            /*brand header svg*/
+    
+    --dark-gray-lava: #554A4D;             /*color hero tittle y nav botones */
+    --gray-lava: #7D6F73;                  /*hero paragraph*/
+        
+    --very-light-plum: #FDF0FF;            /*color button y bg button negative*/
+    --plum: #BB7FC4;                       /*bg button y color button negative*/
+    
+    --antique-white: #FFF4E8;              /*bg persons*/
+    --very-dark-antique-white: #785F44;    /*color persons title*/
+    --dark-antique-white: #95795B;         /*color persons paragraph*/
+    
+    --aqua: #3ACED6;                       /*bg persons blue*/
+    --very-light-aqua: #E6FEFF;            /*color persons title blue*/
+    --light-aqua: #CCFCFF;                 /*color persons paragraph blue*/
+    
+    --light-coral: #FF6F6F;                /*bg footer*/
+    --very-light-coral: #FFC3C3;           /*color footer heart*/
+    --dark-coral: #641E1F;                 /*footer text, icons snapchat-tiktok-instagram*/
+    
+    /* corner radius */
+    --corner-radius-sm: 4px;                 /*nav botones*/
+    --corner-radius-md: 8px;                 /*nav botones*/
+    --corner-radius-lg: 16px;                /*img persons*/
+
+    /* spaces */
+    /* global */
+    --space-5xsm: 0px; 
+    --space-4xsm: 2px; 
+    --space-3xsm: 4px;
+    --space-2xsm: 8px;   
+    --space-xsm: 12px;
+    --space-sm: 16px;
+    --space-md: 20px;
+    --space-lg: 24px;
+    --space-xlg: 28px;
+    --space-2xlg: 32px;
+    --space-3xlg: 36px;
+    --space-4xlg: 42px;
+    --space-5xlg: 44px;
+    --space-6xlg: 48px;
+    --space-7xlg: 52px;
+    --space-8xlg: 56px;
+
+    /* specific */
+    --header-padding:116px;                   /* top y bottom */
+    --hero-padding:116px;                   /* top y bottom */
+    --section-padding: 116px;                /* top y bottom */
+    }
+    
+body {
+    font-family: "Inter", sans-serif;
+    background: var(--white);
+}
+/* aqui inicia header */
+.container {
+    /* ancho maximo de 1024 px, es justamente el espacio del contenido, todo lo que se reserva desde el logo hasta la caja de navegacion */
+    max-width: 1024px;
+    margin: 0px auto; /* (se empuja de ambos lados y queda centrado) */
+    padding: var(--space-8xlg) var(--space-5xsm);
+}
+.container--footer {
+    padding: var(--space-sm) var(--space-5xsm);
+}
+/* botones */
+.button { 
+    /* contenedor */
+    padding: var(--space-sm) var(--space-2xlg);
+    border-radius: var(--corner-radius-md, 8px);
+    background: var(--plum);
+    width: fit-content;
+    /* estilos de texto */
+    color: var(--very-light-plum);
+    font-size: 24px;
+    font-weight: 600;
+    text-decoration: none;
+}
+.button--negative {
+    /* puede ser tambien button--blue, pero preferiblemente negative ya que se invierte el color del texto por el color del relleno y viceversa */
+    background: var(--very-light-plum);
+    color: var(--plum);
+}
+.header {
+    display: flex;
+    /* padding: 56px 128px; */
+    align-items: center;
+    justify-content: space-between; /* justificar el contenido, spacebetween significa auto horizontal gap between items en figma */
+}
+.header__container {
+width: 1024px;
+justify-content: space-between;
+align-items: center;
+}
+.header__logo {
+    /* es el contenedor del svg, aqui va el tamaño del logo*/
+    max-height: 40px;
+
+}
+
+.header__svg {
+    display: block;
+    color: var(--dark-slate-gray);
+    fill: currentColor;
+}
+
+.nav {
+    display: flex; /* flex: para que los elementos se pongan en linea */
+    /* padding: 8px 16px; se quitó para que el fondo se adapte al contenido, espacio en todos los lados */
+
+    /* align-items: center;  inicia desde el inicio y se alinea */
+
+    gap: 16px; /* para la separacion de cada uno de los elementos de textos */
+}
+
+.nav__botones {
+    /* valores corresponden al contenedor individual que tienen en el texto */
+
+    /* caja de enlaces */
+    padding: var(--space-2xsm) var(--space-sm);
+    /* align-items: flex-start; */
+    /* gap: 10px; no es necesario por el momento*/
+    border-radius: var(--corner-radius-md, 8px);
+
+    /* aqui es el texto del boton */
+    color: var(--dark-gray-lava);
+    font-size: 24px;
+    font-weight: 600;
+    text-decoration: none; /* para quitar el subrayado */
+}
+
+/* aqui inicia main */
+/* .main {
+    /* display: flex;
+    flex-direction: column;
+    align-self: stretch; */
+/* aqui inicia hero */
+.hero {
+    padding: var(--hero-padding) var(--space-5xsm);
+}
+.hero__content {
+    display: flex;
+    gap: 90px;    
+}
+.hero__info {
+    display: flex;
+    gap: 32px;
+    flex-direction: column;
+    
+}
+.hero__tittle {
+    color: var(--dark-gray-lava);
+    width: 423px;
+    font-size: 64px;
+    font-weight: 700;    
+}
+.hero__paragraph { 
+    color: var(--gray-lava);
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 42px; /* 190% */
+    
+}
+.hero__figure {
+    border-radius: var(--corner-radius-lg, 16px);
+    overflow: hidden; /* equivalente a clip content de figma, para que la imagen no se salga de su contenedor */
+
+}
+.hero__img {
+    width: 100%;
+    display: block;
+
+}
+/* aqui termina hero */
+
+/* aqui inicia main */
+
+/* aqui inicia persons (section1 y section2 (blue) ) */
+
+.persons{
+    padding: var(--section-padding) var(--space-5xsm);
+    background: var(--antique-white);
+}
+.persons--blue {
+    background: var(--aqua);
+}
+.persons__content{
+    display: flex; /* es como el autolayout en figma, flex activa nuevas opciones como la que esta aqui siguiente*/
+    gap: 153px;
+    /* justify-content: space-between; */
+}
+.persons__content--reverse {
+    flex-direction: row-reverse;
+}
+.persons__figure{
+    align-items: flex-start;
+
+    border-radius: var(--corner-radius-lg, 16px);
+    overflow: hidden;
+}
+.persons__img{
+    width: 100%;
+
+    
+}
+.persons__info{
+    display: flex;
+    flex-direction: column; /* para que se encuentren una debajo de la otra */
+    gap: 32px;
+}
+.persons__title{
+    font-size: 43px;
+    color: var(--very-dark-antique-white);
+    font-weight: 700;
+}
+.persons__title--blue{
+    color: var(--very-light-aqua);
+    }
+.persons__paragraph{
+    color: var(--dark-antique-white);
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 42px; /* 190.909% */
+}
+.persons__paragraph--blue{
+    color: var(--light-aqua);
+}
+/* aqui termina persons (section1 y section2 (blue) ) */
+
+/* aqui termina main */
+
+/* aqui inicia footer */
+.footer{
+    background: var(--light-coral);
+    
+}
+.footer__content{
+    display: flex;
+    justify-content: space-between; /* seria auto en figma */
+
+    /* Para reemplazar content--footer, se puede usar lo siguiente: max-width: 1024px;
+    margin: 0px auto;
+    padding: 16px 0px; */
+}
+.footer__left{
+    gap: 8px;
+    display: flex;
+    
+}
+.footer__text{
+    color:var(--dark-coral);
+    font-size: 24px;
+    font-weight: 500;
+}
+.footer__heart{
+    display: block;
+    color: var(--very-light-coral);
+    fill: currentColor;
+}
+.footer__right{
+    gap: 16px;
+    display: flex;
+}
+.footer__icon--snapchat{
+    display: block;
+    color:var(--dark-coral);
+    fill: currentColor;
+}
+.footer__icon--tiktok{
+    display: block;
+    color:var(--dark-coral);
+    fill: currentColor;
+}
+.footer__icon--instagram{
+    display: block;
+    color:var(--dark-coral);
+    fill: currentColor;
+}
+
+/* responsive tablet */
+@media(max-width:768px){
+    .header__svg{
+        width: 130px;
+    }
+    .header{
+        padding: var(--space-2xlg) var(--space-2xlg);
+    }
+    .nav{
+        gap: 12px;
+    }
+    .nav__botones{
+        padding: var(--space-3xsm) var(--space-3xsm);
+        font-size: 20px;
+    }
+    .hero{
+        padding: var(--space-2xlg) var(--space-2xlg);
+    }
+    .hero__content{
+        gap: 42px;
+        overflow: hidden;
+    }
+    .hero__tittle{
+        font-size: 42px;
+    }
+    .hero__paragraph{
+        font-size: 20px;
+    }
+    .hero__figure{
+        width: auto;
+        height: min-content;
+        align-items: center;
+    }
+    .hero__img{
+        width: 100%;
+        align-self: center;
+    }
+    .persons{
+        padding: var(--space-2xlg) var(--space-2xlg);
+    }
+    .persons__content{
+        gap: 42px;
+        align-items: center;
+    }
+    .persons__info{
+        align-items: center;
+    }
+    .persons__title{
+        font-size: 38px;
+        text-align: right;
+    }
+    .persons__paragraph{
+        font-size: 20px;
+        text-align: right;
+    }
+    .persons__title--blue{
+        text-align: left;
+    }
+    .persons__paragraph--blue{
+        text-align: left;
+    }
+    .persons__figure{
+        width: auto;
+        height: min-content;
+    }
+    .persons__img{
+        width: 120%;
+    }
+    .footer{
+        padding: 0px var(--space-2xlg);
+    }
+    .footer__text{
+        font-size: 20px;
+    }
+}
+
+/* responsive mobile */
+@media(max-width:375px){
+    .header__svg{
+        width: 78px;
+    }
+    .header{
+        padding: var(--space-sm) var(--space-sm);
+    }
+    .nav{
+        gap: 8px;
+    }
+    .nav__botones{
+        padding: var(--space-4xsm) var(--space-4xsm);
+        font-size: 12px;
+    }
+    .hero{
+        padding: var(--space-sm) var(--space-sm);
+    }
+    .hero__content{
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 28px;
+    }
+    .hero__info{
+        align-content: center;
+        align-items: center;
+    }
+    .hero__tittle{
+        font-size: 38px;
+        width: auto;
+        text-align: center;
+    }
+    .hero__paragraph{
+        font-size: 20px;
+        text-align: center;
+    }
+    .hero__figure{
+        width: auto;
+        height: min-content;
+        align-items: center;
+    }
+    .hero__img{
+        width: 100%;
+        align-self: center;
+    }
+    .persons{
+        padding: var(--space-sm) var(--space-sm);
+    }
+    .persons__content{
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+        align-items: center;
+    }
+    .persons__info{
+        align-items: center;
+    }
+    .persons__title{
+        font-size: 38px;
+        text-align: center;
+    }
+    .persons__paragraph{
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .persons__figure{
+        width: min-content;
+        height: min-content;
+    }
+    .persons__img{
+        width: 300px;
+    }
+    .footer{
+        padding: 0 var(--space-sm);
+    }
+    .footer__text{
+        font-size: 14px;
+    }
+}
